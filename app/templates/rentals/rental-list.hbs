@@ -1,0 +1,13 @@
+<h1> Rentals </h1>
+<div class="row">
+	<div class="col-lg-4 col-lg-offset-3">
+		{{#link-to 'rentals.rental-new' tagName="button"}} New Rental {{/link-to}}
+	</div>
+	<ul class="">
+		{{#each model as |rental|}}
+		{{/each}}
+	</ul>
+</div>
+<div class="col-lg-4 col-lg-offset-3">
+	{{outlet}}
+</div>
