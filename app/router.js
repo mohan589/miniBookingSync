@@ -10,6 +10,9 @@ Router.map(function() {
   this.route('rentals', function() {
     this.route('rental-list', { path: '/list' });
     this.route('rental-new', { path: '/new' });
+    this.route('rental-show', {
+      path: ':id'
+    });
   });
 
   this.route('bookings', function() {

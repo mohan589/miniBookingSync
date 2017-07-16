@@ -10,6 +10,6 @@ export default Model.extend({
 	end_at: attr('string'),
 	client_email: attr('string'),
 	price: attr('number'),
-	rental_id: attr('number'),
-	rental: belongsTo('rental')
+	rental_id: attr('number')
+	// rental: belongsTo('rental')
 });
