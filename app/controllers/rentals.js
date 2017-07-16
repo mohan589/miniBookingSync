@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
             this.set('newRentalModel', {})
             model.save().then(()=>{
                 alert('success');
-                this.transaitionToRoute('rentals.rental-show', model)
+                this.transitionToRoute('rentals.show', model)
             })
         }
     }

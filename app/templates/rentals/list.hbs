@@ -3,7 +3,7 @@
 		<ul class="list-group">
 		{{#each model as |rental|}}
 			<li class="list-group-item">			
-			{{link-to rental.name "rentals.show" rental}}
+			<!-- {{link-to rental.name "rentals.show" rental}} -->
 			{{link-to "Edit" "rentals.edit" rental}}
 			<span class="badge">{{rental.daily_rate}}</span></li>
 		{{/each}}
