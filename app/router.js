@@ -8,16 +8,15 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('rentals', function() {
-    this.route('rental-list', { path: '/list' });
-    this.route('rental-new', { path: '/new' });
-    this.route('rental-show', {
-      path: ':id'
-    });
-  });
+    this.route('list', { path: '/list' });
+    this.route('new', { path: '/new' });
+    this.route('show', { path: ':id' });
+    this.route('edit', { path: ':id' });
 
-  this.route('bookings', function() {
-    this.route('bookings-list');
-  });
+    this.route('bookings', function() {
+		this.route('bookings-list');
+	});
+  });  
 });
 
 export default Router;

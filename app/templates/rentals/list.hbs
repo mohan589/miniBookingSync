@@ -3,13 +3,14 @@
 		<ul class="list-group">
 		{{#each model as |rental|}}
 			<li class="list-group-item">			
-			{{link-to rental.name "rentals.rental-show" rental}}				
+			{{link-to rental.name "rentals.show" rental}}
+			{{link-to "Edit" "rentals.edit" rental}}
 			<span class="badge">{{rental.daily_rate}}</span></li>
 		{{/each}}
 	</ul>
 </div>
 <div class="col-lg-5 col-lg-offset-3">
-	{{#link-to 'rentals.rental-new' tagName="button"}} New Rental {{/link-to}}
+	{{#link-to 'rentals.new' tagName="button"}} New Rental {{/link-to}}
 </div>
 <div class="col-lg-4 col-lg-offset-3">
 	{{outlet}}
