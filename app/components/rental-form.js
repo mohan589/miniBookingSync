@@ -1,9 +1,10 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend({
+export default Ember.Component.extend({	
     actions: {
         save(){
-            alert('Save clicked');
+            // alert('Save clicked');
+            this.attrs.save();
         }
     }
 });

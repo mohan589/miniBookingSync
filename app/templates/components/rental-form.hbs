@@ -1,7 +1,8 @@
 <div class="input-group">
-    Name: {{one-way-input value=newRentalModel.name}}
+    Name: {{input value=model.name}}
+    {{model.name}}
 </div>
 <div class="input-group">
-    Day price {{one-way-input value=newRentalModel.daily_rate}}
+    Day price {{input value=model.daily_rate}}
 </div>
 <button {{action 'save'}}> Save</button>
