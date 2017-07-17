@@ -1,7 +1,6 @@
 import MiniBooking from './mini-booking'
 
-export default MiniBooking.extend({
-	host: 'http://localhost:3000',
+export default MiniBooking.extend({	
 	pathForType(){
 		return 'rentals';
 	}
