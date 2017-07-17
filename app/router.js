@@ -11,11 +11,12 @@ Router.map(function() {
     this.route('list', { path: '/list' });
     this.route('new', { path: '/new' });
     this.route('edit', { path: ':id/edit' });
-    this.route('show', { path: ':id' });    
+    this.route('show', { path: ':id/show' });
+    this.route('booking', { path: ':rental_id' }, function(){
+      this.route('list', {path: '/all_bookings'});
+      this.route('new', {path: '/booking/new'});
+    });
   });
-  
-  this.route('bookings.list', {path: 'rentals/:rental_id/all_bookings'});
-  this.route('bookings.new', {path: 'rentals/:rental_id/bookings/new'});
 });
 
 export default Router;
