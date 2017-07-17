@@ -1,9 +1,45 @@
-{{yield}}
-<div class="input-group">
-    Name: {{input value=model.name}}
-    {{model.name}}
+<div class="row col-lg-offset-3">
+	<table class="table">
+		<tr>
+			<td>
+				StartDate:
+			</td>
+			<td>
+				<div class="input-group">				     
+				     {{bootstrap-datepicker value=model.start_at}}
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				EndDate:
+			</td>
+			<td>
+				<div class="input-group">
+					{{bootstrap-datepicker value=model.end_at}}				    
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				ClientEmail:
+			</td>
+			<td>
+				<div class="input-group">
+			     {{input value=model.client_email}}
+			</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Price:
+			</td>
+			<td>
+				<div class="input-group">
+				     {{input value=model.price}}
+				</div>
+			</td>
+		</tr>		
+	</table>
+	<button class="col-lg-2 col-lg-offset-2 btn btn-primary" {{action 'save'}}> Save</button>
 </div>
-<div class="input-group">
-    Day price {{input value=model.daily_rate}}
-</div>
-<button {{action 'save'}}> Save</button>

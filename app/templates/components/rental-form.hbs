@@ -1,11 +1,13 @@
-<div class="input-group">
-    Name: {{input value=model.name}}
+<div class="row col-lg-offset-3">
+	<div class="input-group">
+	    Name: {{input value=model.name}}
+	</div>
+	<div class="input-group">
+	    Day price {{input value=model.daily_rate}}
+	</div>
+	{{#if isNew }}
+		<button class="col-lg-2 col-lg-offset-2 btn btn-primary" {{action 'save'}}> Save</button>
+	{{else}}
+		<button class="col-lg-2 col-lg-offset-2 btn btn-primary" {{action 'edit'}}> Save</button>
+	{{/if}}
 </div>
-<div class="input-group">
-    Day price {{input value=model.daily_rate}}
-</div>
-{{#if isNew }}
-	<button {{action 'save'}}> Save</button>
-{{else}}
-	<button {{action 'edit'}}> Save</button>
-{{/if}}

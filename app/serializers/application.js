@@ -1,12 +1,11 @@
-import Application from './application'
-
-export default Application.extend({
-	isNewSerializerAPI: true,
-	normalizeResponse(store, primaryModelClass, payload, id, requestType){
-		payload = {rentals: payload};
-		// console.log(payload);
-		return this._super(store, primaryModelClass, payload, id, requestType);
-	}
+import DS from 'ember-data';
+export default DS.RESTSerializer.extend({
+	// isNewSerializerAPI: true,
+	// normalizeResponse(store, primaryModelClass, payload, id, requestType){
+	// 	payload = {rentals: payload};
+	// 	// console.log(payload);
+	// 	return this._super(store, primaryModelClass, payload, id, requestType);
+	// }
 
 
 

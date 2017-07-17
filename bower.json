@@ -1,6 +1,7 @@
 {
   "name": "mini-booking-sync",
   "dependencies": {
-    "bootstrap-sass": "^3.3.7"
+    "bootstrap-sass": "^3.3.7",
+    "bootstrap-datepicker": "^1.7.1"
   }
 }
