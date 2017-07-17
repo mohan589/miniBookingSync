@@ -10,6 +10,13 @@ export default Ember.Controller.extend({
                 alert('success');
                 this.transitionToRoute('rentals.show', model)
             })
+        },
+
+        edit(){
+            console.log(model);
+            this.store.findRecord(model.id).then(function(record){
+                model.save();
+            });
         }
     }
 });
