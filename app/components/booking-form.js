@@ -1,9 +1,15 @@
 import Ember from 'ember';
 
-export default Ember.Component.extend({
+const BookingForm = Ember.Component.extend({
 	actions:{
 		save(){
 			this.attrs.save();
 		}
 	}
 });
+
+BookingForm.reopenClass({
+  positionalParams: 'rental',
+});
+
+export default BookingForm;
