@@ -4,8 +4,8 @@
 <div class="input-group">
     Day price {{input value=model.daily_rate}}
 </div>
-{{#if mdoel.id}}
+{{#if isNew }}
 	<button {{action 'save'}}> Save</button>
 {{else}}
 	<button {{action 'edit'}}> Save</button>
-{{/if}}	
+{{/if}}

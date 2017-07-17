@@ -2,10 +2,17 @@
 	<h1> Rentals </h1>
 		<ul class="list-group">
 		{{#each model as |rental|}}
-			<li class="list-group-item">			
-			{{#link-to "rentals.show" rental }}{{rental.name}}{{/link-to}}
-			{{#link-to "rentals.edit"  rental}} Edit {{/link-to}}
-			<span class="badge">{{rental.daily_rate}}</span></li>
+			<li class="list-group-item" style="overflow: hidden;">
+				<div class="col-lg-6">
+					{{#link-to "rentals.show" rental }}{{rental.name}}{{/link-to}}
+				</div>
+				<div class="col-lg-3">
+					<span class="badge pull-right">{{rental.daily_rate}}</span>
+				</div>
+				<div class="col-lg-3 pull-right">
+					{{#link-to "rentals.edit"  rental}} Edit {{/link-to}}
+				</div>
+			</li>
 		{{/each}}
 	</ul>
 </div>
