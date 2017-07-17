@@ -12,10 +12,9 @@ export default Ember.Controller.extend({
             })
         },
 
-        edit(){
-            console.log(model);
-            this.store.findRecord(model.id).then(function(record){
-                model.save();
+        edit(){            
+            this.store.findRecord(this.get("model").id).then(function(record){
+                this.get("model").save();
             });
         }
     }
