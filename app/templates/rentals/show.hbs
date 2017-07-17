@@ -9,10 +9,10 @@
 </p>
 
 <div class="col-lg-6 pull-left">
-	<button {{action 'destroyRental'}}> Destroy Rental</button>
+	<button class='btn btn-primary' {{action 'destroyRental'}}> Destroy Rental</button>
 </div>
 
 
 <div class="col-lg-6 pull-right">
-	{{#link-to 'rentals.booking.list' rental}} Show all {{model.name}} Bookings {{/link-to}}
+	{{#link-to 'rentals.booking.list' rental class='btn btn-default'}} Show all {{model.name}} Bookings {{/link-to}}
 </div>
