@@ -2,13 +2,15 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	controllerName: 'bookings',
-
 	model() {
 		return {};
 	},
 
-	rental(){
-		return this.modelFor('rental');
+	rental: function() {
+		rental = this.modelFor('rental');
+		return {
+			rental: rental
+		}
 	}
 
 	// renderTemplate() {

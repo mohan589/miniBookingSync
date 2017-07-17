@@ -1,18 +1,19 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
-    // queryParams: ['rental'],
+export default Ember.Controller.extend({    
     newBookingModel: {},
-    // rental_obj: null,
+    
     // inti(){
     //     this.rental_obj = this.get('rental');
     // },    
 
     actions:{
         save(){
-        	let model = this.store.createRecord('booking', this.get('newBookingModel'));
-        	this.set('newBookingModel', {});
+            const rental = this.modelFor('rental');
+        	let model = this.store.createRecord('booking', this.currentModel);
+        	model.set('rental', rental);
         	model.save().then(() => {
+                alert('success');
         		this.transitionToRoute('bookings.list', model);
         	});
         }
