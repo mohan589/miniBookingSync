@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+const {Route, set} = Ember;
+
+export default Route.extend({
 	controllerName: 'rentals',
 	model(params) {
         return this.store.findRecord('rental', params.id);
@@ -8,5 +10,9 @@ export default Ember.Route.extend({
 
     serialize: function(model){
 	    return {rental_id: model.get('id')};
+	},
+
+	setupController(controller, model){
+		set(controller, 'rental', model);
 	}
 });
