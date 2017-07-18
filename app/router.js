@@ -13,7 +13,7 @@ Router.map(function() {
     this.route('edit', { path: ':id/edit' });
     this.route('show', { path: ':id/show' });
     this.route('booking', { path: ':rental_id' }, function(){
-      this.route('list', {path: '/all_bookings'});
+      this.route('list', {path: '/bookings'});
       this.route('new', {path: '/booking/new'});
     });
   });
