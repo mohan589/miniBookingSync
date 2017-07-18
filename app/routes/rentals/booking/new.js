@@ -4,6 +4,6 @@ export default Ember.Route.extend({
 	controllerName: 'bookings',
 	
 	model(){
-        return  this.modelFor('rentals.list').get('bookings');
+        // return  this.modelFor('rentals.bookings').get('bookings');
 	}
 });
