@@ -5,12 +5,12 @@ export default Ember.Controller.extend({
 
     actions:{
         save(){
-            // const rental = this.modelFor('rental');
-            let model = this.store.createRecord('booking', this.currentModel);
-            // model.set('rental', rental);
-            model.save().then(() => {
+            const rental = this.modelFor('rental');
+            let model = this.store.createRecord('booking', this.get('model'));
+            model.set('rental', rental);
+            this.get('model').save().then(() => {
                 alert('success');
-                this.transitionToRoute('bookings.list', model);
+                this.transitionToRoute('bookings.list', this.get('model'));
             });
         }
     }

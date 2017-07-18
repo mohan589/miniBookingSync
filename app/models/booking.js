@@ -6,10 +6,9 @@ const {
 } = DS
 
 export default Model.extend({
+	rental: DS.belongsTo('rental', { async: true }),
 	start_at: attr('string'),
 	end_at: attr('string'),
 	client_email: attr('string'),
-	price: attr('number'),
-	rental_id: attr('number'),
-	rental: DS.belongsTo('rental', { async: true })
+	price: attr('number')
 });
