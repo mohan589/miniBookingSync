@@ -12,7 +12,7 @@ export default Ember.Route.extend({
         return assoc;
 	},
 
-	setupController(controller, model){
-		Ember.set(controller, 'booking', model);
-	}
+	// setupController(controller, model){
+	// 	Ember.set(controller, 'booking', model);
+	// }
 });

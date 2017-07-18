@@ -7,7 +7,7 @@ export default Ember.Route.extend({
         return this.store.find('rental',params.rental_id);
 	},
 
-	setupController(controller, model){
-		Ember.set(controller, 'booking', model);
-	}
+	// setupController(controller, model){
+	// 	Ember.set(controller, 'rental', model);
+	// }
 });
