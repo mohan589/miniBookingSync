@@ -12,13 +12,13 @@ export default Ember.Controller.extend({
         },
 
         edit(){
-            this.get('model').save().then(() => {
+            this.get('rental').save().then(() => {
                 this.transitionToRoute('rentals.list')
             });
         },
 
         destroyRental(){
-            this.get('model').destroyRecord().then(()=>(
+            this.get('rental').destroyRecord().then(()=>(
                 this.transitionToRoute('rentals.list')
             ));
         }

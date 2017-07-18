@@ -7,12 +7,4 @@ export default Ember.Component.extend({
 			this.attrs.save();
 		}
 	}
-
 });
-
-// .reopenClass({
-//   // positionalParams: ['rental', 'model'],
-
-
-	
-// });

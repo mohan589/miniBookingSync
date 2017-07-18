@@ -3,7 +3,11 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 	controllerName: 'bookings',
 	
-	model(){
-        // return  this.modelFor('rentals.bookings').get('bookings');
+	model(params){
+        return this.store.find('rental',params.rental_id);
+	},
+
+	setupController(controller, model){
+		Ember.set(controller, 'booking', model);
 	}
 });
