@@ -1,24 +1,20 @@
 <div class="form-horizontal">
-    <div class="form-group has-feedback {{if item.isValid 'has-success'}}">
+    <div class="form-group has-feedback {{if model.isValid 'has-success'}}">
         <label class="col-sm-2 control-label">Name*</label>
         <div class="col-sm-10">
-          {{input type="text" value=rental.name class="form-control" placeholder="Rental Name"}}
-          {{#if item.isValid}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
+          {{input type="text" value=model.name class="form-control" placeholder="model Name"}}
+          {{#if model.isValid}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
         </div>
     </div>
     <div class="form-group">
         <label class="col-sm-2 control-label">Daily Rate</label>
         <div class="col-sm-10">
-          {{input type="text" value=rental.daily_rate class="form-control" placeholder="The address of the Library"}}
+          {{input type="text" value=model.daily_rate class="form-control" placeholder="The address of the Library"}}
         </div>
     </div>   
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            {{#if isNew }}
-				<button type="submit" class="btn btn-default"  disabled={{unless item.isValid true}} {{action 'save'}}> Save</button>
-			{{else}}
-				<button disabled={{unless item.isValid true}} class="btn btn-default" {{action 'edit'}}> Save</button>
-			{{/if}}
+			<button type="submit" class="btn btn-default"  disabled={{unless model.isValid true}} {{action 'save' model}}> Save</button>			
         </div>
     </div>
 </div>

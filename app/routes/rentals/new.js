@@ -7,8 +7,7 @@ export default Ember.Route.extend({
 		return this.store.createRecord('rental');
 	},
 
-	setupController(controller, model){
-		this._super(controller, model);
+	setupController(controller, model){		
 		controller.set('rental', model);	
 	},
 

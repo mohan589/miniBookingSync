@@ -10,6 +10,8 @@ export default Ember.Component.extend({
             this.attrs.edit();
         }
     }
-}).reopenClass({
-  positionalParams: ['rental']
-});
+})
+
+// .reopenClass({
+//   positionalParams: ['rental']
+// });
