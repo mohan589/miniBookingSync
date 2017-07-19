@@ -11,5 +11,9 @@ export default Model.extend({
 	start_at: attr('string'),
 	end_at: attr('string'),
 	client_email: attr('string'),
-	price: attr('number')
+	price: attr('number'),
+  	
+  	isValid: Ember.computed.notEmpty('start_at'),
+  	isValid: Ember.computed.notEmpty('end_at'),
+  	isValid: Ember.computed.notEmpty('price')
 });

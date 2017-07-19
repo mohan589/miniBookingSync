@@ -1,25 +1,19 @@
 <div class="row">
-	<h1> Rentals </h1>
-		<ul class="list-group">
-		{{#each rentals as |rental|}}
-			<li class="list-group-item" style="overflow: hidden;">
-				<div class="col-lg-6">
-					{{#link-to "rentals.show" rental.id }}{{rental.name}}{{/link-to}}
-				</div>
-				<div class="col-lg-1">
-					<span class="badge pull-right">{{rental.daily_rate}}</span>
-				</div>
-				<div class="col-lg-1 pull-right">
-					{{#link-to "rentals.edit"  rental.id}} Edit {{/link-to}}
-				</div>
-				<div class="col-lg-4 pull-right">					
-					{{#link-to 'rentals.bookings' rental }} Show all Bookings {{/link-to}}
-				</div>
-			</li>
-		{{/each}}
-	</ul>
-	{{#link-to 'rentals.new' tagName="button" class='btn btn-default'}} New Rental {{/link-to}}
-</div>
-<div class="col-lg-4 col-lg-offset-3">	
-	{{outlet}}
+	{{#each rentals as |rental|}}
+		<div class="col-lg-4">
+			<div class="panel panel-default panel-success">
+				<div class="panel-heading">		
+					<h4 class="panel-title">
+						{{rental.name}}
+					</h4>
+				</div>	
+				<div class="panel-body">{{rental.daily_rate}}</div>
+				<div class="panel-footer"  style="overflow: hidden;">
+					<span class="pull-right">
+						{{#link-to "rentals.edit"  rental.id  class='btn btn-primary btn-xs'}} Edit {{/link-to}}
+					</span>						
+				</div>				
+			</div>		
+		</div>
+	{{/each}}
 </div>

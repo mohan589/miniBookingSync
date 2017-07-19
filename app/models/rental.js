@@ -10,5 +10,8 @@ const {
 export default Model.extend({
 	bookings: hasMany('booking', { async: true }),
 	name: attr('string'),
-	daily_rate: attr('string')
+	daily_rate: attr('string'),
+
+
+	isValid: Ember.computed.notEmpty('name')  	
 });

@@ -5,10 +5,11 @@ export default Ember.Controller.extend({
 
     actions:{
         save(){
-            const rental = this.modelFor('rental');
-            let model = this.store.createRecord('booking', this.get('model'));
-            model.set('rental', rental);
-            this.get('model').save().then(() => {
+            const rental = this.get('rental');
+            rental.get('bookings').addObject(this.get('model'));
+            // let model = this.store.createRecord('booking', this.get('model'));
+            // model.set('rental', rental);
+            rantal.save().then(() => {
                 alert('success');
                 this.transitionToRoute('bookings.list', this.get('model'));
             });
