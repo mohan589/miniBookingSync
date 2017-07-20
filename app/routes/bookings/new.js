@@ -3,14 +3,17 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 	controllerName: 'bookings',
 	
-	// model(params){
- //        return this.store.find('rental',params.rental_id);
-	// },
+	model(params){
+		return Ember.RSVP.hash({
+			booking: this.store.createRecord('rental'),
+			rentals: this.store.findAll('rental')
+		});        
+	},
 
-	// setupController(controller, model){
-	// 	controller.set('booking', model);
-	// 	Ember.set(controller, 'rental', this.store.get('rental'));
-	// },
+	setupController(controller, model){
+		controller.set('rentals', model.rentals);
+		controller.set('booking', model.booking);
+	},
 
 	renderTemplate(){
 		this.render('bookings/new')

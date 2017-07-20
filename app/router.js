@@ -19,7 +19,7 @@ Router.map(function() {
   });
 
   this.route('bookings', function(){
-    this.route('list');
+    this.route('list' , { path: ':rental_id' });
     this.route('new');
     this.route('edit', { path: ':id/edit' });
     this.route('show', { path: ':id/show' });

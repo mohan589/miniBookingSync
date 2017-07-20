@@ -1,44 +1,39 @@
 <div class="form-horizontal">
-		<div class="form-group has-feedback {{if rental.isValid 'has-success'}}">
-	        <label class="col-sm-2 control-label">Name*</label>
+		<div class="form-group has-feedback {{if booking.isValid 'has-success'}}">
+	        <label class="col-sm-2 control-label">Rental Type*</label>
 	        <div class="col-sm-10">
-	        <select class="form-control" onchange={{action (mut vehicle) value="target.value"}}>
-			  {{#each vehicles as |vehicleChoice|}}
-			    <option value={{vehicleChoice}} selected={{eq vehicle vehicleChoice}}>{{vehicleChoice}}</option>
+	        <select class="form-control" onchange={{action (mut vehicle) value="target.rental_id"}}>
+	        	<option></option>
+			  {{#each rentals as |rental|}}
+			    <option value={{rental.id}} >{{rental.name}}</option>
 			  {{/each}}
 			</select>
-	          {{#if rental.isValid}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
+	          {{#if booking.isValid}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
 	        </div>
 	    </div>
-    <div class="form-group has-feedback {{if rental.isValid 'has-success'}}">
-        <label class="col-sm-2 control-label">Name*</label>
+    <div class="form-group has-feedback {{if booking.isValid 'has-success'}}">
+        <label class="col-sm-2 control-label">Starting Date*</label>
         <div class="col-sm-10">
           {{bootstrap-datepicker value=model.start_at class="form-control"}}
-          {{#if rental.isValid}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
+          {{#if booking.isValid}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
         </div>
     </div>
     <div class="form-group">
-        <label class="col-sm-2 control-label">Daily Rate</label>
+        <label class="col-sm-2 control-label">Ending Date</label>
         <div class="col-sm-10">
           {{bootstrap-datepicker value=model.end_at class="form-control"}}
         </div>
-    </div>
+    </div>    
     <div class="form-group">
-        <label class="col-sm-2 control-label">Daily Rate</label>
-        <div class="col-sm-10">
-          {{bootstrap-datepicker value=model.end_at class="form-control"}}
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="col-sm-2 control-label">Daily Rate</label>
+        <label class="col-sm-2 control-label">Client Email</label>
         <div class="col-sm-10">          
-          {{input type="text" value=rental.client_email class="form-control" placeholder="The address of the Library"}}
+          {{input type="text" value=booking.client_email class="form-control" placeholder="Client Email Address"}}
         </div>
     </div>
     <div class="form-group">
-        <label class="col-sm-2 control-label">Daily Rate</label>
+        <label class="col-sm-2 control-label">Price</label>
         <div class="col-sm-10">
-          {{input type="text" value=rental.price class="form-control" placeholder="The address of the Library"}}
+          {{input type="text" value=booking.price class="form-control" placeholder="Will be updated based on Rental Type"}}
         </div>
     </div>
     <div class="form-group">
