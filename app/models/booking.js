@@ -1,19 +1,15 @@
 import DS from 'ember-data';
+import Ember from 'ember';
 
-const {
-	Model,
-	attr,
-	belongsTo
-} = DS
-
-export default Model.extend({
-	rental: belongsTo('rental', { async: true }),
-	start_at: attr('string'),
-	end_at: attr('string'),
-	client_email: attr('string'),
-	price: attr('number'),
-  	
-  	isValid: Ember.computed.notEmpty('start_at'),
-  	isValid: Ember.computed.notEmpty('end_at'),
-  	isValid: Ember.computed.notEmpty('price')
+export default DS.Model.extend({
+	rental: DS.belongsTo('rental', { async: true }),
+	start_at: DS.attr('string'),
+	end_at: DS.attr('string'),
+	client_email: DS.attr('string'),
+	price: DS.attr('number'),
+	isStartValid: Ember.computed.notEmpty('start_at'),
+	isEndValid: Ember.computed.notEmpty('end_at'),
+	isPriceValid: Ember.computed.notEmpty('price'),
+	isValid: Ember.computed.and('isStartValid', 'isEndValid', 'isPriceValid'),
+	isNotValid: Ember.computed.not('isValid'),
 });

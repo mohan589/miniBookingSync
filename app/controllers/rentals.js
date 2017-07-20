@@ -6,8 +6,8 @@ export default Ember.Controller.extend({
         save(){
             let model = this.store.createRecord('rental', this.get('newRentalModel'))
             this.set('newRentalModel', {})
-            model.save().then(()=>{          
-                this.transitionToRoute('rentals.list', model)
+            model.save().then(()=>{
+                this.transitionToRoute('rentals.list');
             })
         },
 
@@ -15,12 +15,6 @@ export default Ember.Controller.extend({
             this.get('rental').save().then(() => {
                 this.transitionToRoute('rentals.list')
             });
-        },
-
-        destroyRental(){
-            this.get('rental').destroyRecord().then(()=>(
-                this.transitionToRoute('rentals.list')
-            ));
         }
     }
 });
