@@ -6,7 +6,7 @@ export default Ember.Route.extend({
 	},
 
 	setupController(controller, model){
-		Ember.set(controller, 'rentals', model);
-		controller.set('bookings', model.bookings);
+		// Ember.set(controller, 'rentals', model);
+		// controller.set('bookings', model.bookings);
 	}
 });

@@ -7,7 +7,7 @@ export default Ember.Controller.extend({
             let model = this.store.createRecord('rental', this.get('newRentalModel'))
             this.set('newRentalModel', {})
             model.save().then(()=>{          
-                this.transitionToRoute('rentals.show', model)
+                this.transitionToRoute('rentals.list', model)
             })
         },
 
