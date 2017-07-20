@@ -5,9 +5,9 @@ export default Ember.Route.extend({
 	
 	model(params){
 		return Ember.RSVP.hash({
-			booking: this.store.createRecord('rental'),
+			booking: this.store.createRecord('booking'),
 			rentals: this.store.findAll('rental')
-		});        
+		});
 	},
 
 	setupController(controller, model){

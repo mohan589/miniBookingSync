@@ -2,7 +2,7 @@ import DS from 'ember-data';
 import Ember from 'ember';
 
 export default DS.Model.extend({
-	rental: DS.belongsTo('rental', { async: true }),
+	rental: DS.belongsTo('rental'),
 	start_at: DS.attr('string'),
 	end_at: DS.attr('string'),
 	client_email: DS.attr('string'),
