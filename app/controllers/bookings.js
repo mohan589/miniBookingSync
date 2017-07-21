@@ -11,10 +11,10 @@ export default Ember.Controller.extend({
             // let localBook = this.get('booking');
             
             var localBook = this.store.createRecord('booking', {});
-              localBook.start_at = this.get('booking').start_at;
-              localBook.end_at = this.get('booking').end_at;
-              localBook.price = this.get('booking').price;
-              localBook.client_email = this.get('booking').client_email;
+              localBook.set('start_at', this.get('booking').start_at);
+              localBook.set('end_at', this.get('booking').end_at);
+              localBook.set('price', this.get('booking').price);
+              localBook.set('client_email', this.get('booking').client_email);
             
             let rental = this.store.findRecord('rental', parseInt(this.get('booking').rental_id));
             rental.then((rentalData) => {
