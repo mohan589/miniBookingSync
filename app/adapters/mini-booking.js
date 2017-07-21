@@ -1,4 +1,8 @@
 import DS from 'ember-data';
-
-export default DS.RESTAdapter.extend({
+import RESTSerializer from 'ember-data/serializers/rest';
+export default DS.RESTAdapter.extend(DS.EmbeddedRecordsMixin,{
+	attrs: {
+       booking: { embedded: 'always' },
+       rental: { embedded: 'always' }
+  	}
 });
