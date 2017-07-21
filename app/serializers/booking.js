@@ -6,7 +6,12 @@ export default Application.extend({
 		payload = { bookings: payload };
 		// console.log(payload);
 		return this._super(store, primaryModelClass, payload, id, requestType);
-	}
+	},
+
+  keyForRelationship(key/*, relationship, method*/) {
+     if(key === 'rental') return 'rental_id';
+     return this._super(...arguments);
+  }
 
 
 

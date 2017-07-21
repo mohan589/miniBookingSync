@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 	controllerName: 'bookings',
 	
-	model(params){
+	model(){
 		return Ember.RSVP.hash({
 			booking: this.store.createRecord('booking'),
 			rentals: this.store.findAll('rental')
@@ -16,7 +16,7 @@ export default Ember.Route.extend({
 	},
 
 	renderTemplate(){
-		this.render('bookings/new')
+		this.render('rentals/booking/new')
 	},
 
 	willTransition(){

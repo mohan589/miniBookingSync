@@ -12,15 +12,16 @@ Router.map(function() {
     this.route('new');
     this.route('edit', { path: ':id/edit' });
     this.route('show', { path: ':id/show' });
-    this.route('bookings', {path: ':rental_id/bookings'});
-    this.route('booking', { path: '' }, function(){      
-      this.route('new', {path: ':rental_id/booking/new'});
+    
+    this.route('booking', {path: ':rental_id/booking'}, function(){      
+      this.route('list');
+      this.route('new');
     });
   });
 
-  this.route('bookings', function(){
-    this.route('list' , { path: ':rental_id' });
-    this.route('new');
+  this.route('bookings', { path: 'rentals/:rental_id/bookings' }, function(){
+    this.route('list' , );
+    this.route('new', { path: '/new' });
     this.route('edit', { path: ':id/edit' });
     this.route('show', { path: ':id/show' });
   });
