@@ -21,7 +21,7 @@
 					</span>
 					<span class="pull-right">
 						{{#link-to "bookings.edit" booking.rental.id booking.id  class='btn btn-primary btn-xs'}} Edit {{/link-to}}
-						<button class="btn btn-danger btn-xs" {{action 'deleteRental' rental}}>Delete</button>
+						<button class="btn btn-danger btn-xs" {{action 'deleteBooking' booking booking.rental}}>Delete</button>
 					</span>
 				</div>
 			</div>

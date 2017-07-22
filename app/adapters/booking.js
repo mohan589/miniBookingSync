@@ -22,5 +22,11 @@ export default MiniBooking.extend({
 
 	urlForQuery: function(obj, model){
 		return this.buildURL('rental', obj.retal_id, 'rental') + '/bookings';
+	},
+
+	deleteRecord(store, type, snapshot){
+		console.log(this.buildURL('rental', snapshot.adapterOptions.rental.content.id, 'rental') + '/bookings/' + snapshot.adapterOptions.booking.id);
+		var url = this.buildURL('rental', snapshot.adapterOptions.rental.content.id, 'rental') + '/bookings/' + snapshot.adapterOptions.booking.id;
+		return this.ajax(url, "DELETE");
 	}
 });

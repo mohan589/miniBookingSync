@@ -8,6 +8,10 @@ export default Ember.Controller.extend({
             this.get('booking').save().then((data) => {
               this.transitionToRoute('bookings.list', data.rental_id);
             });
+        },
+
+        deleteBooking(booking, rental){
+          booking.destroyRecord({ adapterOptions: {booking: booking, rental: rental }});
         }
     }
 });
