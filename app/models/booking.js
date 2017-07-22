@@ -16,5 +16,18 @@ export default DS.Model.extend({
 
 	clientEmail: Ember.computed('client_email', function(){
 		return `${this.get('client_email')}`.capitalize();
-	})
+	}),
+
+	durationChanged: Ember.observer('start_at', 'end_at', function() {
+		if (this.get('start_at') != undefined && this.get('end_at') != undefined){
+			var date1 = new Date(this.get('start_at'));
+	    var date2 = new Date(this.get('end_at'));
+	    var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+	    var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+			console.log(diffDays * parseInt(this.get("rental").get('daily_rate')));
+			this.set('price', diffDays * parseInt(this.get("rental").get('daily_rate')))
+		}
+		else
+			return 1;
+  })
 });

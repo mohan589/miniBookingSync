@@ -20,5 +20,9 @@ export default Ember.Controller.extend({
                 this.transitionToRoute('bookings.list', this.get('rental').id);
             });
         }
+    },
+
+    setRental(rental){
+      this.set('rental', rental);
     }
 });
