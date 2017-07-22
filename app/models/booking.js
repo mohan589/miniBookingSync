@@ -12,4 +12,8 @@ export default DS.Model.extend({
 	isPriceValid: Ember.computed.notEmpty('price'),
 	isValid: Ember.computed.and('isStartValid', 'isEndValid', 'isPriceValid'),
 	isNotValid: Ember.computed.not('isValid'),
+
+	clientEmail: Ember.computed('client_email', function(){
+		return `${this.get('client_email')}`.capitalize();
+	})
 });
