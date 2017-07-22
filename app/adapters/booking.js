@@ -9,15 +9,12 @@ export default MiniBooking.extend({
 	},
 
 	createRecord: function(store, type, record) {
-	    var data = {};
-	    var serializer = store.serializerFor(record.modelName);
-
-	    serializer.serializeIntoHash(data, type, record, { includeId: true });
-
-	    // Custom stuff
-	    var rentalId = record.record.rental_id;
-	    var url = this.buildURL('rental', rentalId, 'rental') + '/bookings';
-	    return this.ajax(url, "POST", { data: data });
+		var data = {};
+		var serializer = store.serializerFor(record.modelName);
+		serializer.serializeIntoHash(data, type, record, { includeId: true });
+		var rentalId = record.record.rental_id;
+		var url = this.buildURL('rental', rentalId, 'rental') + '/bookings';
+		return this.ajax(url, "POST", { data: data });
 	},
 
 	urlForQuery: function(obj, model){
@@ -25,7 +22,6 @@ export default MiniBooking.extend({
 	},
 
 	deleteRecord(store, type, snapshot){
-		console.log(this.buildURL('rental', snapshot.adapterOptions.rental.content.id, 'rental') + '/bookings/' + snapshot.adapterOptions.booking.id);
 		var url = this.buildURL('rental', snapshot.adapterOptions.rental.content.id, 'rental') + '/bookings/' + snapshot.adapterOptions.booking.id;
 		return this.ajax(url, "DELETE");
 	}

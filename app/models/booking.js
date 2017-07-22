@@ -3,8 +3,8 @@ import Ember from 'ember';
 
 export default DS.Model.extend({
 	rental: DS.belongsTo('rental'),
-	start_at: DS.attr('string'),
-	end_at: DS.attr('string'),
+	start_at: DS.attr('date'),
+	end_at: DS.attr('date'),
 	client_email: DS.attr('string'),
 	price: DS.attr('number'),
 	isStartValid: Ember.computed.notEmpty('start_at'),

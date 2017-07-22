@@ -2,11 +2,11 @@
 	{{#each rentals as |rental|}}
 		<div class="col-lg-4">
 			<div class="panel panel-default panel-success">
-				<div class="panel-heading">		
+				<div class="panel-heading">
 					<h4 class="panel-title">
-						{{rental.name}}
+						{{rental.nameRental}}
 					</h4>
-				</div>	
+				</div>
 				<div class="panel-body">{{rental.daily_rate}}</div>
 				<div class="panel-footer"  style="overflow: hidden;">
 					<span>
@@ -17,7 +17,7 @@
 						<button class="btn btn-danger btn-xs" {{action 'deleteRental' rental}}>Delete</button>
 					</span>
 				</div>
-			</div>		
+			</div>
 		</div>
 	{{/each}}
 </div>
