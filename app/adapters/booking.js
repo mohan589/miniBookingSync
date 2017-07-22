@@ -22,7 +22,7 @@ export default MiniBooking.extend({
 	},
 
 	deleteRecord(store, type, snapshot){
-		var url = this.buildURL('rental', snapshot.adapterOptions.rental.content.id, 'rental') + '/bookings/' + snapshot.adapterOptions.booking.id;
+		var url = this.buildURL('rental', snapshot.adapterOptions.rental, 'rental') + '/bookings/' + snapshot.adapterOptions.booking;
 		return this.ajax(url, "DELETE");
 	},
 

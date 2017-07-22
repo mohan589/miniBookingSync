@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
         },
 
         deleteBooking(booking, rental){
-          booking.destroyRecord({ adapterOptions: {booking: booking, rental: rental }});
+          booking.destroyRecord({ adapterOptions: {booking: booking.id, rental: rental }});
         },
 
         edit(){
