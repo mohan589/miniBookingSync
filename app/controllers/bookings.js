@@ -5,8 +5,9 @@ export default Ember.Controller.extend({
 
     actions:{
         save(){
-            this.get('booking').save().then((data) => {
-              this.transitionToRoute('bookings.list', data.rental_id);
+          var _this = this;
+            this.get('booking').save({adapterOptions:{rental: _this.get('booking').rental_id}}).then((booking) => {
+              _this.transitionToRoute('bookings.list', booking.data.rental_id);
             });
         },
 
@@ -15,8 +16,8 @@ export default Ember.Controller.extend({
         },
 
         edit(){
-            this.get('booking').save().then(() => {
-                this.transitionToRoute('bookings.list', data.rental_id);
+            this.get('booking').save({adapterOptions:{rental: this.get('rental')}}).then(() => {
+                this.transitionToRoute('bookings.list', this.get('rental').id);
             });
         }
     }

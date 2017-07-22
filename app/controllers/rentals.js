@@ -7,9 +7,9 @@ export default Ember.Controller.extend({
         save(){
             let model = this.store.createRecord('rental', this.get('newRentalModel'))
             this.set('newRentalModel', {})
-
+            var _this = this;
             model.save().then(function(model){
-              this.transitionToRoute('rentals.list');
+              _this.transitionToRoute('rentals.list');
             }, function(errors){
               Ember.get(this, 'flashes').danger(errors.errors[0].detail);
             });
