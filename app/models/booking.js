@@ -7,6 +7,7 @@ export default DS.Model.extend({
 	end_at: DS.attr('date'),
 	client_email: DS.attr('string'),
 	price: DS.attr('number'),
+	rental_id: DS.attr('number'),
 	isStartValid: Ember.computed.notEmpty('start_at'),
 	isEndValid: Ember.computed.notEmpty('end_at'),
 	isPriceValid: Ember.computed.notEmpty('price'),
