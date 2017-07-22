@@ -4,7 +4,7 @@ export default Ember.Route.extend({
 	controllerName: 'bookings',
 
 	model(params){
-		return this.store.find('rental', params.rental_id).get('bookings');
+		return this.store.query('booking', {retal_id: params.rental_id});
 	},
 
 	setupController(controller, model){

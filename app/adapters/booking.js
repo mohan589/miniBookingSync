@@ -18,5 +18,9 @@ export default MiniBooking.extend({
 	    var rentalId = record.record.rental_id;
 	    var url = this.buildURL('rental', rentalId, 'rental') + '/bookings';
 	    return this.ajax(url, "POST", { data: data });
+	},
+
+	urlForQuery: function(obj, model){
+		return this.buildURL('rental', obj.retal_id, 'rental') + '/bookings';
 	}
 });
